@@ -1,0 +1,36 @@
+# gitleaks configuration
+#
+# Why this file exists
+# --------------------
+# Probe (https://probe.aws.dev) runs gitleaks on every commit as part of the
+# Public Content Security Review (PCSR) process. The default `generic-api-key`
+# rule flags the `hashed_secret` fields inside `.secrets.baseline`, which are
+# false positives.
+#
+# `.secrets.baseline` is the detect-secrets baseline. Every `hashed_secret`
+# value in it is a SHA-1 digest of a string that detect-secrets has already
+# triaged and recorded as `is_secret: false`. A one-way hash is not a
+# credential and cannot be used to authenticate against anything.
+#
+# The entries recorded there point at Subresource Integrity (SRI) digests in
+# extend-skills/protoforge/protoforge.md, i.e. the `integrity="sha384-..."`
+# attributes on public CDN <script>/<link> tags. Those digests are meant to be
+# published in plain sight -- that is the entire purpose of SRI.
+#
+# This config narrows what gets reported. It does not disable any detection
+# rule: `useDefault = true` keeps the full default ruleset active for every
+# other file in the repository.
+
+title = "sample-ai-plc-practices"
+
+[extend]
+# Inherit the complete upstream gitleaks ruleset.
+useDefault = true
+
+[allowlist]
+description = "detect-secrets baseline holds one-way hashes, not live secrets"
+# Anchored on a path segment boundary so the entry still matches when the
+# scanner clones into a subdirectory rather than scanning from the repo root.
+paths = [
+  '''(^|/)\.secrets\.baseline$''',
+]

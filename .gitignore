@@ -1,0 +1,60 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# 编辑器 Editors
+.vscode/
+.idea/
+*.swp
+*~
+
+# Python（Skill 相关脚本可能产生）
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# 临时与备份文件 Temporary and backup files
+*.tmp
+*.bak
+*.orig
+*.log
+
+# ── 安全：防止误提交敏感文件 ──────────────────────────────
+# Security: guard against accidentally committing sensitive files
+# 说明见 engagement/README.md 的脱敏红线
+# See the sanitization rules in engagement/README.md
+
+# 凭据与密钥 Credentials and keys
+*.pem
+*.key
+*.p12
+*.pfx
+*.keystore
+*credential*
+*secret*
+.env
+.env.*
+!.env.example
+# detect-secrets 的已审计基线：只含指纹与行号，不含明文，需要随仓库提交作为扫描证据
+!.secrets.baseline
+
+# AWS 配置 AWS config
+.aws/
+aws-exports.js
+
+# 客户原件容易夹带敏感信息，默认不入库
+# Customer-supplied documents often carry sensitive data; excluded by default.
+# 确需提交某份已脱敏的文件时，用 git add -f 单独添加
+# To commit a specific sanitized file, add it explicitly with git add -f
+*.pdf
+*.docx
+*.xlsx
+*.pptx
+*.csv
