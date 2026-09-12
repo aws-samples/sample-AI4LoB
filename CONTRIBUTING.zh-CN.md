@@ -9,8 +9,8 @@
 ## 快速开始
 
 ```bash
-git clone https://github.com/aws-samples/sample-ai-plc-practices.git
-cd sample-ai-plc-practices
+git clone https://github.com/aws-samples/sample-AI4LoB.git
+cd sample-AI4LoB
 git checkout -b feature/<简短描述>
 # ... 改动 ...
 git add .
@@ -67,7 +67,7 @@ git commit -m "core-skills: <改了什么，为什么>"
 
 ```bash
 cd core-skills
-for s in DeepResearch brainstorm plan execute AIPLC; do
+for s in DeepResearch brainstorm plan execute AI4LoB; do
   diff <(unzip -p "$s.zip" SKILL.md) "$s/SKILL.md" > /dev/null \
     && echo "$s OK" || echo "$s MISMATCH"
 done

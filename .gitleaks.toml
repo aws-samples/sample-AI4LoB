@@ -21,7 +21,7 @@
 # rule: `useDefault = true` keeps the full default ruleset active for every
 # other file in the repository.
 
-title = "sample-ai-plc-practices"
+title = "sample-AI4LoB"
 
 [extend]
 # Inherit the complete upstream gitleaks ruleset.

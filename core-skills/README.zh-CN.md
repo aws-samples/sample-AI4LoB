@@ -15,9 +15,9 @@ AI-PLC 流水线的五个 Skill。安装步骤见
 | [`brainstorm`](brainstorm/) | 研究报告 → PRD | `{slug}-prd-{date}.md` | 3 个 | 2 |
 | [`plan`](plan/) | PRD → DAG 实施计划 | `...-plan.md` | 3 个 | 3 |
 | [`execute`](execute/) | 计划 → 工件 | 状态回写 + 工件 | 3 个 | 4 |
-| [`AIPLC`](AIPLC/) | 四步流水线编排 | 编排上述四步 | 无 | 5（最后） |
+| [`AI4LoB`](AI4LoB/) | 四步流水线编排 | 编排上述四步 | 无 | 5（最后） |
 
-⚠️ AIPLC 声明 `depends-on: [deepresearch, brainstorm, plan, execute]`，**必须最后
+⚠️ AI4LoB 声明 `depends-on: [deepresearch, brainstorm, plan, execute]`，**必须最后
 安装**。
 
 ---
@@ -32,7 +32,7 @@ core-skills/
 ├── brainstorm.zip       │ 安装用
 ├── plan.zip             │ 下载 → 解压 → 导入 Quick desktop
 ├── execute.zip          │
-├── AIPLC.zip            ┘
+├── AI4LoB.zip            ┘
 │
 ├── DeepResearch/        ┐
 │   └── SKILL.md         │
@@ -54,7 +54,7 @@ core-skills/
 │       ├── oracle-review.md
 │       ├── plan-parser.md
 │       └── skill-generation.md
-└── AIPLC/
+└── AI4LoB/
     └── SKILL.md
 ```
 
@@ -78,7 +78,7 @@ core-skills/
 
 ```bash
 cd core-skills
-for s in DeepResearch brainstorm plan execute AIPLC; do
+for s in DeepResearch brainstorm plan execute AI4LoB; do
   echo "=== $s ==="
   diff -r <(unzip -p "$s.zip" SKILL.md) "$s/SKILL.md" > /dev/null \
     && echo "SKILL.md OK" || echo "SKILL.md MISMATCH"

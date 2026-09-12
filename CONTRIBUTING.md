@@ -10,8 +10,8 @@ start.
 ## Quick start
 
 ```bash
-git clone https://github.com/aws-samples/sample-ai-plc-practices.git
-cd sample-ai-plc-practices
+git clone https://github.com/aws-samples/sample-AI4LoB.git
+cd sample-AI4LoB
 git checkout -b feature/<short-description>
 # ... make changes ...
 git add .
@@ -71,7 +71,7 @@ git commit -m "core-skills: <what changed, and why>"
 
 ```bash
 cd core-skills
-for s in DeepResearch brainstorm plan execute AIPLC; do
+for s in DeepResearch brainstorm plan execute AI4LoB; do
   diff <(unzip -p "$s.zip" SKILL.md) "$s/SKILL.md" > /dev/null \
     && echo "$s OK" || echo "$s MISMATCH"
 done

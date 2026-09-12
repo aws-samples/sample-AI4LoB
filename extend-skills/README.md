@@ -56,5 +56,5 @@ Add a row here when you contribute a skill.
 | [`protoforge`](protoforge/) | Natural-language requirements → development-delivery-grade interactive HTML prototypes. 15-state coverage, three-tier permission model, Web/Mobile dual paradigm, single-file Alpine.js + Tailwind + DaisyUI, zero build | `protoforge`, `生成原型`, `原型生成`, `create prototype`, `interactive mockup`, `交互原型`, `HTML原型` |
 | [`research-to-prd`](research-to-prd/) | Two-stage `deepresearch → brainstorm` pipeline, with a depth setting (light 3 agents / standard 6 / deep 8) | `research to prd`, `从研究到PRD`, `研究生成PRD`, `topic to PRD`, `主题转PRD` |
 
-Both were **generated** by the AIPLC pipeline rather than hand-written — itself a
-way of using AIPLC: build a domain-specific tool, not just the final deliverable.
+Both were **generated** by the AI4LoB pipeline rather than hand-written — itself a
+way of using AI4LoB: build a domain-specific tool, not just the final deliverable.

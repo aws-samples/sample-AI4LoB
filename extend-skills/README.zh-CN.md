@@ -55,5 +55,5 @@ extend-skills/
 | [`protoforge`](protoforge/) | 自然语言需求 → 研发交付级可交互 HTML 原型。15 态覆盖、三层权限模型、Web/Mobile 双范式，单文件 Alpine.js + Tailwind + DaisyUI，零构建 | `protoforge`, `生成原型`, `原型生成`, `create prototype`, `interactive mockup`, `交互原型`, `HTML原型` |
 | [`research-to-prd`](research-to-prd/) | `deepresearch → brainstorm` 两段流水线，带深度档位（light 3 代理 / standard 6 / deep 8） | `research to prd`, `从研究到PRD`, `研究生成PRD`, `topic to PRD`, `主题转PRD` |
 
-两个 Skill 都是用 AIPLC 流水线**生成**出来的，而非手写——这本身是 AIPLC 的一种用法：
+两个 Skill 都是用 AI4LoB 流水线**生成**出来的，而非手写——这本身是 AI4LoB 的一种用法：
 用它造领域专用工具，而不只是造最终交付物。

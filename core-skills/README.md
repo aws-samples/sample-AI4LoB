@@ -15,9 +15,9 @@ The five skills of the AI-PLC pipeline. See the
 | [`brainstorm`](brainstorm/) | Research → PRD | `{slug}-prd-{date}.md` | 3 files | 2 |
 | [`plan`](plan/) | PRD → DAG plan | `...-plan.md` | 3 files | 3 |
 | [`execute`](execute/) | Plan → artifacts | status write-back + artifacts | 3 files | 4 |
-| [`AIPLC`](AIPLC/) | Four-step orchestrator | orchestrates the above | none | 5 (last) |
+| [`AI4LoB`](AI4LoB/) | Four-step orchestrator | orchestrates the above | none | 5 (last) |
 
-⚠️ AIPLC declares `depends-on: [deepresearch, brainstorm, plan, execute]`, so it
+⚠️ AI4LoB declares `depends-on: [deepresearch, brainstorm, plan, execute]`, so it
 **must be installed last**.
 
 ---
@@ -32,7 +32,7 @@ core-skills/
 ├── brainstorm.zip       │ for installing
 ├── plan.zip             │ download → unzip → import into Quick desktop
 ├── execute.zip          │
-├── AIPLC.zip            ┘
+├── AI4LoB.zip            ┘
 │
 ├── DeepResearch/        ┐
 │   └── SKILL.md         │
@@ -54,7 +54,7 @@ core-skills/
 │       ├── oracle-review.md
 │       ├── plan-parser.md
 │       └── skill-generation.md
-└── AIPLC/
+└── AI4LoB/
     └── SKILL.md
 ```
 
@@ -80,7 +80,7 @@ addition to `SKILL.md`, or the skill will fail at the phase that needs them.
 
 ```bash
 cd core-skills
-for s in DeepResearch brainstorm plan execute AIPLC; do
+for s in DeepResearch brainstorm plan execute AI4LoB; do
   echo "=== $s ==="
   diff -r <(unzip -p "$s.zip" SKILL.md) "$s/SKILL.md" > /dev/null \
     && echo "SKILL.md OK" || echo "SKILL.md MISMATCH"

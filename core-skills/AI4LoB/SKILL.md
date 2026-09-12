@@ -1,9 +1,9 @@
 ---
-name: aiplc
-display_name: AI-PLC
-description: "AI Product Lifecycle pipeline — 从深度研究到交付的全自动四步流程。触发词: 'aiplc [主题]'、'AI-PLC [topic]'、'从研究到交付'。当用户想对一个主题进行完整的研究→PRD→计划→执行流程时激活。"
+name: ai4lob
+display_name: AI4LoB
+description: "AI Product Lifecycle pipeline — 从深度研究到交付的全自动四步流程。触发词: 'ai4lob [主题]'、'AI4LoB [topic]'、'从研究到交付'。当用户想对一个主题进行完整的研究→PRD→计划→执行流程时激活。"
 icon: "🚀"
-trigger: aiplc
+trigger: ai4lob
 inputs:
   - name: topic
     description: "要研究和交付的主题或问题"

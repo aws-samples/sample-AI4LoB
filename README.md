@@ -12,7 +12,7 @@ into a reusable pipeline.
 > (research reports, PRDs, plans, HTML prototypes) are drafts for review, not
 > deliverables to ship as-is.
 
-> **⚠️ Your input leaves your machine.** `DeepResearch` and `AIPLC` send the
+> **⚠️ Your input leaves your machine.** `DeepResearch` and `AI4LoB` send the
 > research topic — and the search queries derived from it — to third-party
 > search and inference providers. **Do not use confidential information as a
 > research topic**: unreleased product or launch plans, internal metrics,
@@ -35,7 +35,7 @@ into a reusable pipeline.
 ## 1. What this is
 
 Five skills form an **AI Product Lifecycle (AI-PLC) pipeline**. The first four
-are functional skills; the fifth (AIPLC) is the orchestrator that chains them.
+are functional skills; the fifth (AI4LoB) is the orchestrator that chains them.
 
 ```
 topic
@@ -55,7 +55,7 @@ topic
                                                                    └─────────────────┘    (code/docs/skills)
      ▲                        ▲                      ▲                      ▲
      └────────────────────────┴──────────────────────┴──────────────────────┘
-                  AIPLC (orchestration, user confirmation gate between steps)
+                  AI4LoB (orchestration, user confirmation gate between steps)
 ```
 
 ### 1.1 DeepResearch — multi-agent deep research orchestrator
@@ -129,20 +129,20 @@ Largely hands-off while running ("No mid-run questions").
 - **Triggers** — `execute`, `run plan`, and Chinese equivalents
   (`执行计划`, `施工`, `实施`, `开干`, `按计划执行`)
 
-### 1.5 AIPLC — four-step pipeline orchestrator
+### 1.5 AI4LoB — four-step pipeline orchestrator
 
 Chains the four skills into a `deepresearch → brainstorm → plan → execute`
 pipeline that **pauses for user confirmation after every step**. You can request
 changes; the agent reviews and responds, iterating until you are satisfied before
 moving on.
 
-Compared with using deepresearch alone, AIPLC adds the Amazon PR/FAQ and
+Compared with using deepresearch alone, AI4LoB adds the Amazon PR/FAQ and
 One-way / Two-way Door decision frameworks, and can optionally pull in the AWS
 Documentation MCP server when the topic concerns a specific AWS service.
 
 - **Input** — one required parameter, `topic`
 - **Declared dependency** — `depends-on: [deepresearch, brainstorm, plan, execute]`
-- **Triggers** — `aiplc <topic>`, `AI-PLC <topic>`
+- **Triggers** — `ai4lob <topic>`, `AI-PLC <topic>`
 
 ---
 
@@ -198,7 +198,7 @@ skills in one go and avoids attaching reference files by hand.
 1. Get the skills by cloning this repository:
 
    ```bash
-   git clone https://github.com/aws-samples/sample-ai-plc-practices.git
+   git clone https://github.com/aws-samples/sample-AI4LoB.git
    ```
 
    The extracted skill folders are already under `core-skills/` — no unzipping
@@ -207,7 +207,7 @@ skills in one go and avoids attaching reference files by hand.
 2. In Amazon Quick, open **settings** → **My computer**.
 
 3. Choose **Add Folder** and add the folder holding the skills (e.g.
-   `sample-ai-plc-practices/core-skills`). Confirm the folder shows as enabled.
+   `sample-AI4LoB/core-skills`). Confirm the folder shows as enabled.
 
 4. Choose **New Chat** and prompt the agent to install them, for example:
 
@@ -246,12 +246,12 @@ The path described in the official documentation. Use it to install a single ski
 
 ### 3.4 Install order and verification
 
-**Install in dependency order.** AIPLC declares
+**Install in dependency order.** AI4LoB declares
 `depends-on: [deepresearch, brainstorm, plan, execute]`. Install the four
-functional skills first, otherwise AIPLC cannot hand off at the corresponding
+functional skills first, otherwise AI4LoB cannot hand off at the corresponding
 step:
 
-`DeepResearch` → `brainstorm` → `plan` → `execute` → `AIPLC`
+`DeepResearch` → `brainstorm` → `plan` → `execute` → `AI4LoB`
 
 **Verify.** Find the skill in the Skills tab and choose **Run** to open a
 conversation with it preloaded, or simply say "use the DeepResearch skill" in chat.
@@ -287,7 +287,7 @@ Recording the commit SHA you installed from makes later comparison easier.
 ### 4.1 Full pipeline (recommended entry point)
 
 ```
-aiplc <topic>
+ai4lob <topic>
 ```
 
 Chains all four steps with a confirmation gate between each — the full journey
@@ -312,7 +312,7 @@ from an idea to a deliverable artifact.
 | **brainstorm** | **Highest.** Answer 2-6 mandatory questions and expect pushback. Decide on approach selection, review findings, and the handoff menu. There is an escape hatch if you are impatient, but approach exploration and adversarial review cannot be waived. |
 | **plan** | 0-8 questions — the better the PRD, the fewer. Only close-call, one-way-door technical decisions come to you. |
 | **execute** | Largely hands-off. Surfaces only on a `NEEDS_CONTEXT` abort or the final report. |
-| **AIPLC** | Every gate between steps needs your sign-off; the research report can be iterated indefinitely. |
+| **AI4LoB** | Every gate between steps needs your sign-off; the research report can be iterated indefinitely. |
 
 ### 4.4 When an intermediate artifact breaks
 
@@ -385,11 +385,11 @@ agent platform requires adaptation.
    resumption, and completion notification.
 2. **Research tools** — DeepResearch names web search, web fetch, library doc
    lookup, and GitHub code search by tool.
-3. **AWS Documentation MCP server** (optional) — AIPLC can consult the AWS
+3. **AWS Documentation MCP server** (optional) — AI4LoB can consult the AWS
    Documentation MCP server when the topic concerns a specific AWS service. If
    the connector is absent, the skill skips that source and notes the omission
    in the report.
-4. **Session interaction** — AIPLC uses session tabs to display files and a
+4. **Session interaction** — AI4LoB uses session tabs to display files and a
    decision-card syntax for choices.
 5. **skill-creator validation scripts** (only when a plan generates a skill) —
    `execute` shells out to `python3 -m scripts.quick_validate` from a
@@ -417,7 +417,7 @@ engineering planning, delivery — into four skills with strict boundaries, each
 producing a single artifact and referencing the others through stable IDs.
 Parallel subagents provide speed, Socratic interrogation and Oracle adversarial
 review provide quality, gates and a six-value state machine stop half-finished
-work from leaking downstream, and AIPLC orchestrates the whole thing into an
+work from leaking downstream, and AI4LoB orchestrates the whole thing into an
 automated pipeline running from a topic phrase to a shippable artifact.
 
 ---

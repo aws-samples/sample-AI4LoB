@@ -9,7 +9,7 @@
 > 以满足组织自身的安全、监管与合规要求。这些 Skill 产出的工件（研究报告、PRD、
 > 计划、HTML 原型）是供评审的草稿，不是可直接交付的成品。
 
-> **⚠️ 你输入的内容会离开本机。** `DeepResearch` 和 `AIPLC` 会把研究主题以及由它
+> **⚠️ 你输入的内容会离开本机。** `DeepResearch` 和 `AI4LoB` 会把研究主题以及由它
 > 衍生的检索词发送给第三方搜索与推理服务。**不要把机密信息作为研究主题** —— 包括
 > 未发布的产品或发布计划、内部指标、客户名称等客户可识别信息、凭证，以及任何被你
 > 所在组织归类为机密的内容。请先改写为脱敏表述。改写成同义说法没有用 —— 同义
@@ -29,7 +29,7 @@
 ## 1. 这套 Skill 是什么
 
 五个 Skill 构成一条 **AI 产品生命周期（AI Product Lifecycle, AI-PLC）流水线**。
-前四个是功能 Skill，第五个（AIPLC）是把前四个串联起来的编排 Skill。
+前四个是功能 Skill，第五个（AI4LoB）是把前四个串联起来的编排 Skill。
 
 ```
 用户主题 topic
@@ -49,7 +49,7 @@
                                                                    └─────────────────┘   （代码/文档/skill）
      ▲                        ▲                      ▲                      ▲
      └────────────────────────┴──────────────────────┴──────────────────────┘
-                  AIPLC（编排层，每步之间设用户确认门）
+                  AI4LoB（编排层，每步之间设用户确认门）
 ```
 
 ### 1.1 DeepResearch — 多智能体深度研究编排器
@@ -111,19 +111,19 @@ PRD 质量越高，它需要追问的问题越少（0-8 题）。
 - **输出** — 状态回写后的同一份计划文件 + 子代理产出的各类工件
 - **触发词** — `execute`、`run plan`、`执行计划`、`施工`、`实施`、`开干`、`按计划执行`
 
-### 1.5 AIPLC — 四步流水线总编排
+### 1.5 AI4LoB — 四步流水线总编排
 
 把上面四个 Skill 串成 `deepresearch → brainstorm → plan → execute` 的流水线，
 **每一步完成后暂停等待用户确认**。用户可以提出修改意见，agent review 后给出反馈，
 形成迭代循环，直到满意才进入下一步。
 
-相比裸用 deepresearch，AIPLC 引入亚马逊式的 PR/FAQ 与 One-way / Two-way Door
+相比裸用 deepresearch，AI4LoB 引入亚马逊式的 PR/FAQ 与 One-way / Two-way Door
 决策框架；当主题涉及特定 AWS 服务时，还可选接入 AWS Documentation MCP server
 补充官方文档。
 
 - **输入** — 一个必填参数 `topic`
 - **声明依赖** — `depends-on: [deepresearch, brainstorm, plan, execute]`
-- **触发词** — `aiplc <主题>`、`AI-PLC <topic>`、"从研究到交付"
+- **触发词** — `ai4lob <主题>`、`AI-PLC <topic>`、"从研究到交付"
 
 ---
 
@@ -179,7 +179,7 @@ PRD 质量越高，它需要追问的问题越少（0-8 题）。
 1. 克隆本仓库获取 Skill：
 
    ```bash
-   git clone https://github.com/aws-samples/sample-ai-plc-practices.git
+   git clone https://github.com/aws-samples/sample-AI4LoB.git
    ```
 
    `core-skills/` 下已是解压好的 Skill 目录，无需再解压。若你拿的是 `.zip`，先把它们
@@ -188,7 +188,7 @@ PRD 质量越高，它需要追问的问题越少（0-8 题）。
 2. 打开 Amazon Quick，进入 **settings** → **My computer**。
 
 3. 点击 **Add Folder**，把存放 Skill 的文件夹加进来（例如
-   `sample-ai-plc-practices/core-skills`），并确认该目录是**已启用**状态。
+   `sample-AI4LoB/core-skills`），并确认该目录是**已启用**状态。
 
 4. 点击 **New Chat**，用提示词让 Agent 安装：
 
@@ -222,11 +222,11 @@ PRD 质量越高，它需要追问的问题越少（0-8 题）。
 
 ### 3.4 安装顺序与验证
 
-**按依赖顺序安装**：AIPLC 声明了
+**按依赖顺序安装**：AI4LoB 声明了
 `depends-on: [deepresearch, brainstorm, plan, execute]`。请先装完四个功能 Skill，
-再装 AIPLC，否则 AIPLC 编排到某一步时会找不到对应 Skill：
+再装 AI4LoB，否则 AI4LoB 编排到某一步时会找不到对应 Skill：
 
-`DeepResearch` → `brainstorm` → `plan` → `execute` → `AIPLC`
+`DeepResearch` → `brainstorm` → `plan` → `execute` → `AI4LoB`
 
 **验证**：在 Skills 标签页找到该 Skill，点 **Run** 开启一个已预加载该 Skill 的会话；
 或直接在对话里说"use the DeepResearch skill"。
@@ -260,7 +260,7 @@ Quick desktop 目前没有"重新导入覆盖"的入口。更新方式：在 Ski
 ### 4.1 全流程（推荐入口）
 
 ```
-aiplc <主题>
+ai4lob <主题>
 ```
 
 自动串起四步，每步之间有确认门。适合"从一个想法到可交付工件"的完整旅程。
@@ -284,7 +284,7 @@ aiplc <主题>
 | **brainstorm** | **最高**。需逐一回答 2-6 个强制性问题并接受顶回追问；在方案选择、审查发现、交接菜单上做决定。不耐烦时有逃生舱，但方案探索与对抗审查不可豁免。 |
 | **plan** | 回答 0-8 个问题（PRD 质量越高问得越少）。只有"close call 且 one-way door"的技术决策才需要你拍板。 |
 | **execute** | 基本免打扰。只在 `NEEDS_CONTEXT` 中止和最终汇报时介入。 |
-| **AIPLC** | 每步之间的确认门都需表态；研究报告可无限轮迭代修改。 |
+| **AI4LoB** | 每步之间的确认门都需表态；研究报告可无限轮迭代修改。 |
 
 ### 4.4 中间产物出问题时
 
@@ -351,10 +351,10 @@ unzip -l brainstorm.zip
    以及后台运行、会话续用、完成通知等机制。
 2. **研究工具** — DeepResearch 指名使用网页搜索、网页抓取、库文档查询、GitHub
    代码搜索等工具。
-3. **AWS Documentation MCP server（可选）** — 当主题涉及特定 AWS 服务时，AIPLC
+3. **AWS Documentation MCP server（可选）** — 当主题涉及特定 AWS 服务时，AI4LoB
    可接入 AWS Documentation MCP server 补充官方文档。若该 connector 未连接，
    Skill 会跳过该数据源并在报告中注明。
-4. **会话交互能力** — AIPLC 使用会话标签页展示文件、decision card 决策卡片语法等。
+4. **会话交互能力** — AI4LoB 使用会话标签页展示文件、decision card 决策卡片语法等。
 5. **skill-creator 校验脚本**（仅当计划要生成 Skill 时） — `execute` 会 shell out
    执行 skill-creator 的 `python3 -m scripts.quick_validate`，路径假定为
    `~/.opencode/skills/skill-creator/`。该路径是对宿主环境的假设，本仓库并不提供
@@ -376,7 +376,7 @@ unzip -l brainstorm.zip
 
 这套体系把"研究 → 产品定义 → 工程规划 → 交付执行"的完整产品生命周期拆成四个边界严格、
 只产出单一工件、互相以稳定 ID 引用的 Skill，用并行子代理提速、用苏格拉底质询与
-Oracle 对抗审查控质、用门禁与六值状态机防止半成品向下游泄漏，最后由 AIPLC 编排成
+Oracle 对抗审查控质、用门禁与六值状态机防止半成品向下游泄漏，最后由 AI4LoB 编排成
 一条从一个主题短语到可交付工件的自动化流水线。
 
 ---
