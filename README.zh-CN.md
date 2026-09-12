@@ -1,4 +1,4 @@
-# AI-PLC Practices
+# AI4LoB Practices
 
 [🇬🇧 English](README.md) ｜ **中文**
 
