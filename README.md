@@ -27,14 +27,14 @@ into a reusable pipeline.
 
 | Directory | Description |
 | --- | --- |
-| [`core-skills/`](core-skills/README.md) | The five core skills forming the AI-PLC pipeline |
+| [`core-skills/`](core-skills/README.md) | The five core skills forming the AI4LoB pipeline |
 | [`extend-skills/`](extend-skills/README.md) | Home for extension skills |
 
 ---
 
 ## 1. What this is
 
-Five skills form an **AI Product Lifecycle (AI-PLC) pipeline**. The first four
+Five skills form an **AI for Line of Business (AI4LoB) pipeline**. The first four
 are functional skills; the fifth (AI4LoB) is the orchestrator that chains them.
 
 ```
@@ -142,7 +142,7 @@ Documentation MCP server when the topic concerns a specific AWS service.
 
 - **Input** — one required parameter, `topic`
 - **Declared dependency** — `depends-on: [deepresearch, brainstorm, plan, execute]`
-- **Triggers** — `ai4lob <topic>`, `AI-PLC <topic>`
+- **Triggers** — `ai4lob <topic>`
 
 ---
 

@@ -2,7 +2,7 @@
 
 **English** ｜ [🇨🇳 中文](README.zh-CN.md)
 
-The five skills of the AI-PLC pipeline. See the
+The five skills of the AI4LoB pipeline. See the
 [root README](../README.md#3-installing-on-amazon-quick-desktop) for installation.
 
 ---

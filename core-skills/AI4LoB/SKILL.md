@@ -1,7 +1,7 @@
 ---
 name: ai4lob
 display_name: AI4LoB
-description: "AI Product Lifecycle pipeline — 从深度研究到交付的全自动四步流程。触发词: 'ai4lob [主题]'、'AI4LoB [topic]'、'从研究到交付'。当用户想对一个主题进行完整的研究→PRD→计划→执行流程时激活。"
+description: "AI for Line of Business pipeline — 从深度研究到交付的全自动四步流程。触发词: 'ai4lob [主题]'、'AI4LoB [topic]'、'从研究到交付'。当用户想对一个主题进行完整的研究→PRD→计划→执行流程时激活。"
 icon: "🚀"
 trigger: ai4lob
 inputs:
@@ -14,7 +14,7 @@ depends-on: [deepresearch, brainstorm, plan, execute]
 
 ## Overview
 
-AI-PLC (AI Product Lifecycle) 是一个四步编排 Skill，将 `deepresearch → brainstorm → plan → execute` 串联为一个完整的自动化 pipeline。用户只需提供一个研究主题，即可从深度研究出发，经过 PRD 生成、实施计划制定，最终交付可执行的工件。
+AI4LoB (AI for Line of Business) 是一个四步编排 Skill，将 `deepresearch → brainstorm → plan → execute` 串联为一个完整的自动化 pipeline。用户只需提供一个研究主题，即可从深度研究出发，经过 PRD 生成、实施计划制定，最终交付可执行的工件。
 
 每一步完成后，会暂停并等待用户确认。用户可以提出修改意见，agent 会 review 并给出反馈，形成迭代循环，直到用户满意后才进入下一步。
 

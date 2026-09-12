@@ -21,14 +21,14 @@
 
 | 目录 | 说明 |
 | --- | --- |
-| [`core-skills/`](core-skills/README.zh-CN.md) | 五个核心 Skill，构成 AI-PLC 流水线 |
+| [`core-skills/`](core-skills/README.zh-CN.md) | 五个核心 Skill，构成 AI4LoB 流水线 |
 | [`extend-skills/`](extend-skills/README.zh-CN.md) | 扩展 Skill 存放位置 |
 
 ---
 
 ## 1. 这套 Skill 是什么
 
-五个 Skill 构成一条 **AI 产品生命周期（AI Product Lifecycle, AI-PLC）流水线**。
+五个 Skill 构成一条 **面向业务线的 AI（AI for Line of Business, AI4LoB）流水线**。
 前四个是功能 Skill，第五个（AI4LoB）是把前四个串联起来的编排 Skill。
 
 ```
@@ -123,7 +123,7 @@ PRD 质量越高，它需要追问的问题越少（0-8 题）。
 
 - **输入** — 一个必填参数 `topic`
 - **声明依赖** — `depends-on: [deepresearch, brainstorm, plan, execute]`
-- **触发词** — `ai4lob <主题>`、`AI-PLC <topic>`、"从研究到交付"
+- **触发词** — `ai4lob <主题>`、"从研究到交付"
 
 ---
 

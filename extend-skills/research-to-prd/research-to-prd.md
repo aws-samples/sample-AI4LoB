@@ -202,7 +202,7 @@ If verification fails, inform the user and offer to retry or proceed with partia
 ### 建议下一步
 - 执行 `plan` 技能：将 PRD 转化为实施计划
 - 执行 `execute` 技能：按计划交付
-- 或输入 `ai4lob` 触发完整 AI-PLC 管道
+- 或输入 `ai4lob` 触发完整 AI4LoB 管道
 ```
 
 </Templates>

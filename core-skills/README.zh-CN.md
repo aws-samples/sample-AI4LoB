@@ -2,7 +2,7 @@
 
 [🇬🇧 English](README.md) ｜ **中文**
 
-AI-PLC 流水线的五个 Skill。安装步骤见
+AI4LoB 流水线的五个 Skill。安装步骤见
 [仓库根目录 README 中文版](../README.zh-CN.md#3-在-amazon-quick-desktop-安装)。
 
 ---

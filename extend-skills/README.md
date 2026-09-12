@@ -11,7 +11,7 @@ scenario-specific customizations, and experimental variants of the core skills.
 
 | Goes in `core-skills/` | Goes in `extend-skills/` |
 | --- | --- |
-| Part of the four-step AI-PLC pipeline proper | Everything else |
+| Part of the four-step AI4LoB pipeline proper | Everything else |
 | Changes affect every user; requires merge-request review | Additions are isolated; lighter review |
 | Five, and stable | Grows with demand |
 
